@@ -11,6 +11,7 @@ export function StoryPreview({ story, onClick }: StoryPreviewProps) {
     <button
       onClick={onClick}
       className="flex flex-col items-center space-y-1 focus:outline-none"
+      data-testid={`story-preview-${story.id}`}
     >
       <div
         className={`p-[2px] rounded-full ${

@@ -24,6 +24,7 @@ export function Story({
         <div
           className="h-full bg-white transition-all duration-100 ease-linear"
           style={{ width: `${progress}%` }}
+          data-testid="story-progress"
         />
       </div>
 
@@ -32,6 +33,7 @@ export function Story({
           src={story.image}
           alt={`Story by ${story.username}`}
           className="w-full h-full object-cover"
+          data-testid="story-image"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
       </div>
@@ -55,12 +57,14 @@ export function Story({
         className={`absolute left-0 top-0 w-1/2 h-full z-10 ${
           isFirst ? "hidden" : ""
         }`}
+        data-testid="prev-story-area"
       />
       <button
         onClick={onNext}
         className={`absolute right-0 top-0 w-1/2 h-full z-10 ${
           isLast ? "hidden" : ""
         }`}
+        data-testid="next-story-area"
       />
     </div>
   );
