@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 import { Story } from "./Story";
 import { Story as StoryType } from "../types/story";
 
+const STORY_DURATION = 5000;
+
 interface StoriesViewerProps {
   stories: StoryType[];
   currentIndex: number;
@@ -29,7 +31,7 @@ export function StoriesViewer({
 
     const interval = setInterval(() => {
       setProgressBar((prev) => {
-        return prev + 2;
+        return prev + 100 / (STORY_DURATION / 100);
       });
     }, 100);
 
@@ -54,6 +56,7 @@ export function StoriesViewer({
   return (
     <div
       className="fixed inset-0 bg-black z-50 touch-none"
+      data-testid="stories-viewer"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onMouseDown={handleTouchStart}
@@ -73,6 +76,7 @@ export function StoriesViewer({
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-30"
+          data-testid="close-stories"
         >
           X
         </button>

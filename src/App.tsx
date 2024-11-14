@@ -26,7 +26,10 @@ function App() {
       </header>
 
       <div className="bg-white rounded-lg shadow-sm p-2">
-        <div className="flex space-x-4 overflow-x-auto pb-2">
+        <div
+          className="flex space-x-4 overflow-x-auto pb-2"
+          data-testid="stories-list"
+        >
           {stories.map((story: any, index: any) => (
             <StoryPreview
               key={story.id}
