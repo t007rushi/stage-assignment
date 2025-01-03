@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+Here’s the README.md file in GitHub-flavored Markdown:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+markdown
+Copy code
+# Story Viewer Application
 
-## Available Scripts
+A simple, performance-optimized story viewer application inspired by Instagram stories, built with React and Tailwind CSS. The app is deployed and available at the following link:
 
-In the project directory, you can run:
+## 📦 Live Deployment
 
-### `npm start`
+- [Story Viewer App](https://fanciful-melba-007f47.netlify.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Setup Instructions
 
-### `npm test`
+To run the application and tests locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. **Clone the Repository**
 
-### `npm run build`
+```bash
+git clone https://github.com/t007rushi/stage-assignment.git
+cd stage-assignment
+```
+2. Install Dependencies
+Install all the necessary dependencies using npm or yarn:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the Application
+To run the app locally, use:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
+This will run the application in development mode, and you can view it at http://localhost:3000.
 
-### `npm run eject`
+4. Running Tests
+The project includes both unit and end-to-end tests. To run them, use the following commands:
+End-to-End Tests (via Playwright):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm run test:e2e
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For running tests with Playwright UI:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run test:e2e:ui
+```
 
-## Learn More
+### 1. Design Choices: React & Tailwind CSS
+- **React**: Utilizes React for declarative components and local state management, ensuring maintainability and scalability.
+- **Tailwind CSS**: Uses utility-first classes for rapid styling, leading to cleaner components and reduced custom CSS.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Performance Optimizations
+- **Tailwind CSS**: Generates only necessary styles, reducing the final CSS bundle size.
+- **Minimal Re-renders**: Functional components and hooks like `useCallback` minimize re-renders for better responsiveness.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Scalability Considerations
+- **Component Reusability**: Components like `Story`, `StoryViewer`, and `StoryPreviewer` are reusable, making scaling easy.
+- **Responsive Design**: Fully responsive with Tailwind, ensuring seamless adaptation to all screen sizes.
+
+### 4. Testing
+End-to-End Tests: Playwright tests the full user journey, simulating user interactions with the app. This ensures that the app behaves as expected in a real-world scenario.
